@@ -1,5 +1,8 @@
+let s:syntax = get(g:, 'data_section_simple_syntax', 'perl')
+
 unlet b:current_syntax
-syn include @perl syntax/perl.vim
+execute 'syn include @perl syntax/' . s:syntax . '.vim'
+let b:current_syntax = 'perl'
 
 " copied from the original perl.vim
 if get(g:, 'perl_fold', 0)
