@@ -11,7 +11,7 @@ else
   syntax region perlDATA		start="^__DATA__$" skip="." end="." contains=@perlDATA,perlDataSection
 endif
 
-syn region perlDataSection start=/^__DATA__\n\_^\(@@\s\)\@=/ end=/\%$/ contains=perlDataSectionDATA,perlDataSectionBody keepend
+syn region perlDataSection start=/^__DATA__\n\_s*\_^\(@@\s\)\@=/ end=/\%$/ contains=perlDataSectionDATA,perlDataSectionBody keepend
 syn match perlDataSectionDATA /^__DATA__/ contained
 syn region perlDataSectionBody start=/^@@\s.*$/ end=/\(\_^@@\s*\)\@=/ contains=perlDataSectionHeader,@perl keepend contained
 syn match perlDataSectionHeader /^@@\s.*$/ contains=perlDataSectionHeaderKeyword contained
